@@ -51,24 +51,14 @@ public class SudokuValidity {
 				}
 				if ((i >= 0 && i < 3) && (j >= 0 && j < 3)) {
 					grid1Set.add(sudokuFilled[i][j]);
-				}
-				if ((i >= 3 && i < 6) && (j >= 3 && j < 6)) {
-					grid5Set.add(sudokuFilled[i][j]);
-				}
-				if ((i >= 6 && i < 9) && (j >= 6 && j < 9)) {
-					grid9Set.add(sudokuFilled[i][j]);
-				}
-				if ((i >= 0 && i < 3) && (j >= 3 && j < 6)) {
-					grid4Set.add(sudokuFilled[i][j]);
-					grid2Set.add(sudokuFilled[j][i]);
-				}
-				if ((i >= 6 && i < 9) && (j >= 0 && j < 3)) {
-					grid3Set.add(sudokuFilled[i][j]);
-					grid7Set.add(sudokuFilled[j][i]);
-				}
-				if ((i >= 6 && i < 9) && (j >= 3 && j < 6)) {
-					grid6Set.add(sudokuFilled[i][j]);
-					grid8Set.add(sudokuFilled[j][i]);
+					grid5Set.add(sudokuFilled[i + 3][j + 3]);
+					grid9Set.add(sudokuFilled[i + 6][j + 6]);
+					grid4Set.add(sudokuFilled[i][j + 3]);
+					grid2Set.add(sudokuFilled[j + 3][i]);
+					grid3Set.add(sudokuFilled[i + 6][j]);
+					grid7Set.add(sudokuFilled[j][i + 6]);
+					grid6Set.add(sudokuFilled[i + 6][j + 3]);
+					grid8Set.add(sudokuFilled[j + 3][i + 6]);
 				}
 			}
 			if (rowSet.size() != 9 || colSet.size() != 9) {
