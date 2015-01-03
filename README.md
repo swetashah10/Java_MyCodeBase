@@ -1,4 +1,4 @@
-Hello-Github
+Java Practice Pearls
 ============
 This is a test README file. 
 
