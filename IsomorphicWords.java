@@ -16,7 +16,7 @@ public class IsomorphicWords {
 
 	public static boolean checkIfIsomorphic(String s1, String s2) {
 
-		if (null == s1 || null == s2 || (s1.length() == 0 || s2.length() == 0)) {
+		if (null == s1 || null == s2) {
 			return false;
 		} else if (s1.length() == 0 && s2.length() == 0) {
 			return true;
@@ -46,7 +46,6 @@ public class IsomorphicWords {
 			}
 		}
 
-		final StringBuilder str = new StringBuilder(listOfIndices.toString());
-		return str.toString();
+		return listOfIndices;
 	}
 }
