@@ -8,3 +8,4 @@ This folder consists of all the practice coding questions.
 2. StarXmasTree.java
 3. TicTacToe.java
 4. SudokuValidity.java
+5. IsomorphicWordCheck.java
