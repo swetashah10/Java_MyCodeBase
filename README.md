@@ -1,4 +1,4 @@
-Java Practice Pearls
+Java Pearls
 ============
 This is a test README file. 
 
