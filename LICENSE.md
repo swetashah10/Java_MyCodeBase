@@ -1,1 +1,1 @@
-Copyright {{{2014-2015}}} {{{Sweta Shah}}}
+Copyright 2014-2016 Sweta Shah
