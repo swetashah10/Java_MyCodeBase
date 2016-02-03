@@ -1,11 +1,1 @@
-Java Pearls
-============
-This is a test README file. 
-
-This folder consists of all the practice coding questions. 
-
-1. EmoticonsDiv2.java
-2. StarXmasTree.java
-3. TicTacToe.java
-4. SudokuValidity.java
-5. IsomorphicWordCheck.java
+Repo containing all the practice problems on Java programming attempted till date. 
