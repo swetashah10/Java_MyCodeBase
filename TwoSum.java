@@ -19,7 +19,7 @@ public class TwoSum {
             int nextNum = Math.abs(target - numbers[i]);
             
             int firstIndex = i+1;
-            int secondIndex = binSearch(nextNum, numbers, 0, numbers.length - 1);
+            int secondIndex = binSearch(nextNum, numbers, firstIndex, numbers.length - 1);
             
             if(secondIndex != -1){
                 result[0] = firstIndex;
