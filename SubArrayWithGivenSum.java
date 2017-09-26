@@ -15,51 +15,63 @@ class SubArrayWithGivenSum
 	    
 	    int T = sn.nextInt();
 	    
-	    while(T!=0){
+	    while(T != 0){
 	        
-	        int arrSize = sn.nextInt();
-	        int sum = sn.nextInt();
+	        int N = sn.nextInt();
+	        int SUM = sn.nextInt();
+	        int[] arr = new int[N];
 	        
-	        int[] arr = new int[arrSize];
-	        for(int i=0; i<arrSize; i++){
-	            arr[i] = sn.nextInt();
+	        for(int  i = 0; i < N; i++){
+	          arr[i] = sn.nextInt();
 	        }
 	        
-	        findSubArrayWithSum(arr, sum);
+	        findSumArray(arr, SUM);
 	        T--;
 	    }
 	    sn.close();
 	 }
 	 
-	 public static void findSubArrayWithSum(int[] arr, int sum){
+	 public static void findSumArray(int[] arr, int SUM){
 	     
-	     int startIndex = 0, endIndex = 0;
-	     int currSum = 0;
+	     int startIndex = 0, endIndex = 1, currSum = arr[0];
 	     boolean sumFound = false;
 	     
-	     for(int i=0; i<arr.length; i++){
+	     if(currSum == SUM){
+	         System.out.println("1 1");
+	     }
+	     
+	     for(int i=1; i<arr.length; i++){
 	         
-	         currSum += arr[i];
-	         if(currSum < sum){
+	         if(currSum < SUM){
+	             currSum += arr[i];
 	             endIndex++;
-	            continue;
-	         } else if(currSum > sum){
-	             // reset current sum to remove the prev value from the sum and consider next sum. 
-	             currSum = currSum - arr[startIndex];
-	             //shift the startIndex to next position and start the loop again. 
-	             startIndex = startIndex + 1;
 	         }
 	         
-	         if(currSum == sum) {
+	         while(currSum > SUM){
 	             
-	            // we got the positions of the integers whose sum matches with sum. Print them out. 
-	            System.out.println((startIndex + 1) + " " + (endIndex+1));
-	            sumFound = true;
-	            break;
+	             currSum = currSum - arr[startIndex];
+	             startIndex++;
+	         }
+	         
+	         if(currSum == SUM){
+	             
+	             System.out.println(startIndex+1 + " " + endIndex);
+	             sumFound = true;
+	             break;
 	         }
 	     }
 	     
-	     if(!sumFound)
-	        System.out.println("-1");
+	     if(!sumFound && currSum > SUM){
+	        while(currSum > SUM){
+	             currSum = currSum - arr[startIndex];
+	             startIndex++;
+	         }
+	         
+	         if(currSum == SUM){
+	             System.out.println(startIndex+1 + " " + endIndex);
+	         }
+	     }else if(!sumFound){
+	         System.out.println("-1");
+	     }
 	 }
 }
